@@ -1,5 +1,3 @@
-from operator import index
-
 
 def roman_to_int(x):
     d_str_list = ["IV","IX", "XL", "XC", "CD", "CM"]
