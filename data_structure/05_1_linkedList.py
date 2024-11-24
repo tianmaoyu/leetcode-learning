@@ -1,4 +1,5 @@
 from operator import itemgetter
+from typing import no_type_check_decorator
 
 
 class Node:
@@ -32,9 +33,21 @@ class LinkedNode:
             pred.next=node
             self.size+=1
 
-
     def remove(self, data):
-        self.head = self.head.next
+
+        if self.head.data==data:
+            self.head=self.head.next
+            return self.head
+
+        pred=self.head
+        while pred:
+            if pred.data==data:
+                pred=pred.next
+                return pred
+            pred=pred.next
+
+
+
 
     def __len__(self):
         return self.size
