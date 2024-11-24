@@ -1,6 +1,3 @@
-# dummy head 虚拟的头节点
-from contextlib import nullcontext
-
 
 class Node:
     def __init__(self, data, next_node):
@@ -75,21 +72,20 @@ class LinkedList:
     # def __str__(self):
 
 
+class LinkedStack:
+    def __init__(self):
+        self.list=LinkedList()
 
-node_list = LinkedList()
-node_list.add(0, 0)
-node_list.add(1, 1)
-node_list.add(2, 2)
-print(node_list)
+    def push(self,data):
+        self.list.add(0,data)
 
-print(node_list.get_by_idx(0))
-print(node_list.get_by_idx(1))
+    def pop(self):
+        return self.list.remove_by_idx(0)
 
-node_list.set(0, 10)
 
-print(node_list.contains(10))
-print(node_list.contains(11))
-
-print(node_list.remove_by_idx(0))
-print(node_list.remove_by_idx(0))
-print(node_list.remove_by_idx(0))
+stack= LinkedStack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+stack.push(4)
+print(stack.pop())
