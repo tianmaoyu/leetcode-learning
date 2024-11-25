@@ -9,8 +9,6 @@ class Node:
 
 
 class LinkedNode:
-    size: int = 0
-    head: Node = None
 
     def __init__(self):
         self.head = Node(None, None)
